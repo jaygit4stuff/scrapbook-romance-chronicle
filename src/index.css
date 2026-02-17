@@ -1,96 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Caveat:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 20 20% 7%;
+    --foreground: 30 30% 92%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 20 15% 12%;
+    --card-foreground: 30 30% 92%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 20 15% 12%;
+    --popover-foreground: 30 30% 92%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 348 70% 50%;
+    --primary-foreground: 30 30% 96%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 340 30% 20%;
+    --secondary-foreground: 340 20% 85%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 20 10% 18%;
+    --muted-foreground: 20 15% 55%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 38 70% 55%;
+    --accent-foreground: 20 20% 7%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 340 20% 22%;
+    --input: 340 20% 22%;
+    --ring: 348 70% 50%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Valentine custom tokens */
+    --valentine-rose: 348 70% 50%;
+    --valentine-blush: 340 40% 75%;
+    --valentine-burgundy: 340 60% 25%;
+    --valentine-gold: 38 70% 55%;
+    --valentine-cream: 30 30% 92%;
+    --valentine-lavender: 270 30% 70%;
+    --valentine-deep-red: 350 80% 35%;
+    --valentine-paper: 35 35% 88%;
+    --valentine-paper-dark: 30 20% 15%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 20 15% 10%;
+    --sidebar-foreground: 30 30% 92%;
+    --sidebar-primary: 348 70% 50%;
+    --sidebar-primary-foreground: 30 30% 96%;
+    --sidebar-accent: 340 30% 20%;
+    --sidebar-accent-foreground: 30 30% 92%;
+    --sidebar-border: 340 20% 22%;
+    --sidebar-ring: 348 70% 50%;
   }
 }
 
@@ -101,5 +65,156 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Cormorant Garamond', serif;
+    overflow-x: hidden;
   }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .font-handwriting {
+    font-family: 'Dancing Script', cursive;
+  }
+
+  .font-casual {
+    font-family: 'Caveat', cursive;
+  }
+
+  .font-serif-display {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-body {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .scrapbook-page {
+    background: hsl(var(--valentine-paper-dark));
+    position: relative;
+  }
+
+  .scrapbook-page::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(circle at 20% 30%, hsl(var(--valentine-burgundy) / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, hsl(var(--valentine-rose) / 0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .torn-edge-top {
+    clip-path: polygon(
+      0% 4%, 2% 0%, 5% 3%, 8% 1%, 12% 4%, 15% 0%, 18% 3%, 22% 1%, 25% 4%, 28% 0%, 
+      32% 3%, 35% 1%, 38% 4%, 42% 0%, 45% 3%, 48% 1%, 52% 4%, 55% 0%, 58% 3%, 
+      62% 1%, 65% 4%, 68% 0%, 72% 3%, 75% 1%, 78% 4%, 82% 0%, 85% 3%, 88% 1%, 
+      92% 4%, 95% 0%, 98% 3%, 100% 1%, 100% 100%, 0% 100%
+    );
+  }
+
+  .torn-edge-bottom {
+    clip-path: polygon(
+      0% 0%, 100% 0%, 100% 96%, 98% 100%, 95% 97%, 92% 100%, 88% 97%, 85% 100%,
+      82% 97%, 78% 100%, 75% 97%, 72% 100%, 68% 97%, 65% 100%, 62% 97%, 58% 100%,
+      55% 97%, 52% 100%, 48% 97%, 45% 100%, 42% 97%, 38% 100%, 35% 97%, 32% 100%,
+      28% 97%, 25% 100%, 22% 97%, 18% 100%, 15% 97%, 12% 100%, 8% 97%, 5% 100%,
+      2% 97%, 0% 100%
+    );
+  }
+
+  .polaroid {
+    @apply bg-white p-2 pb-10 shadow-lg;
+    transform: rotate(var(--rotation, -2deg));
+  }
+
+  .photo-corner {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border-style: solid;
+    border-color: hsl(var(--valentine-gold) / 0.6);
+  }
+
+  .photo-corner-tl {
+    top: -2px; left: -2px;
+    border-width: 3px 0 0 3px;
+  }
+  .photo-corner-tr {
+    top: -2px; right: -2px;
+    border-width: 3px 3px 0 0;
+  }
+  .photo-corner-bl {
+    bottom: -2px; left: -2px;
+    border-width: 0 0 3px 3px;
+  }
+  .photo-corner-br {
+    bottom: -2px; right: -2px;
+    border-width: 0 3px 3px 0;
+  }
+
+  .ribbon {
+    background: linear-gradient(135deg, hsl(var(--valentine-rose)), hsl(var(--valentine-deep-red)));
+    padding: 0.5rem 2rem;
+    position: relative;
+    display: inline-block;
+    box-shadow: 0 2px 8px hsl(var(--valentine-rose) / 0.3);
+  }
+
+  .ribbon::before,
+  .ribbon::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    border: 8px solid hsl(var(--valentine-deep-red));
+    border-bottom-color: transparent;
+  }
+  .ribbon::before { left: 0; border-left-color: transparent; }
+  .ribbon::after { right: 0; border-right-color: transparent; }
+
+  .glow-rose {
+    box-shadow: 0 0 20px hsl(var(--valentine-rose) / 0.3),
+                0 0 40px hsl(var(--valentine-rose) / 0.1);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--valentine-rose) / 0.5),
+                 0 0 40px hsl(var(--valentine-rose) / 0.2);
+  }
+}
+
+@layer utilities {
+  .text-valentine-rose { color: hsl(var(--valentine-rose)); }
+  .text-valentine-blush { color: hsl(var(--valentine-blush)); }
+  .text-valentine-gold { color: hsl(var(--valentine-gold)); }
+  .text-valentine-cream { color: hsl(var(--valentine-cream)); }
+  .text-valentine-lavender { color: hsl(var(--valentine-lavender)); }
+  .bg-valentine-rose { background-color: hsl(var(--valentine-rose)); }
+  .bg-valentine-burgundy { background-color: hsl(var(--valentine-burgundy)); }
+  .bg-valentine-gold { background-color: hsl(var(--valentine-gold)); }
+  .bg-valentine-cream { background-color: hsl(var(--valentine-cream)); }
+  .bg-valentine-paper { background-color: hsl(var(--valentine-paper)); }
+  .bg-valentine-paper-dark { background-color: hsl(var(--valentine-paper-dark)); }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--valentine-burgundy));
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--valentine-rose));
+}
+
+/* Heart shape for masks */
+.heart-clip {
+  clip-path: path('M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z');
 }
